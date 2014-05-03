@@ -5,23 +5,23 @@ def expando (currentDir, artistDir, albumDir)
   
   makeDir(artistDir)
   moveDir(currentDir, artistDir)
-  renameDir("..\\#{artistDir}\\#{currentDir}", albumDir)
+  renameDir("../#{artistDir}/#{currentDir}", "../#{artistDir}/#{albumDir}")
 end
 
 def makeDir (dirName)
-  command = "mkdir \"..\\#{dirName}\""
+  command = "mkdir \"../#{dirName}\""
   puts command
   system command
 end
 
 def moveDir (dirName, destDir)
-  command = "move \"..\\#{dirName}\" \"..\\#{destDir}\""
+  command = "mv \"../#{dirName}\" \"../#{destDir}\""
   puts command
   system command
 end
 
 def renameDir (currentDirName, newDirName)
-  command = "rename \"#{currentDirName}\" \"#{newDirName}\""
+  command = "mv \"#{currentDirName}\" \"#{newDirName}\""
   puts command
   system command
 end

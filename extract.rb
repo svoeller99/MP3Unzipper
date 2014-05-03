@@ -7,10 +7,10 @@ Dir.foreach('..') do |item|
   
   next if dirname.nil?
   
-  command = '7z x "..\\'+filename+'" -o"..\\'+dirname[1].to_str + '"'
+  command = 'unzip "../'+filename+'" -d "../'+dirname[1].to_str + '"'
   puts command
   system command
-  command = 'del "..\\'+filename+'"'
+  command = 'rm "../'+filename+'"'
   puts command
   system command
 
